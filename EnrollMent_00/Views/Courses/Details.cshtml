@@ -1,0 +1,42 @@
+﻿@model EnrollMent_00.Models.Course
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CourseTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Faculty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Faculty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditHour)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditHour)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CourseID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

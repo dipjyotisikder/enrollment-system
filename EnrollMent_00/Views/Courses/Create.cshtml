@@ -1,0 +1,91 @@
+﻿@model EnrollMent_00.Models.Course
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseID" class="control-label"></label>
+                <input asp-for="CourseID" class="form-control" />
+                <span asp-validation-for="CourseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseTitle" class="control-label"></label>
+                <input asp-for="CourseTitle" class="form-control" />
+                <span asp-validation-for="CourseTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Faculty" class="control-label"></label>
+                <!-- <input asp-for="Faculty" class="form-control" /> -->
+                <select class="form-control" asp-for="Faculty" required="required">
+                    <option value="">Select Faculty</option>
+                    <option value="AG">Agriculture</option>
+                    <option value="CSE">Computer Science and Engineering</option>
+                    <option value="BAM"> Business Administration and Management</option>
+                    <option value="FSH">Fisheries</option>
+                    <option value="NFS">Nutration and Food Science</option>
+                    <option value="DVM">DVM</option>
+                    <option value="AH">Animal Husbendary</option>
+                    <option value="DM">Diasester Management</option>
+                    <option value="LM">Land Management</option>
+                </select>
+                <span asp-validation-for="Faculty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="CreditHour" class="control-label"></label>
+                <!-- <input asp-for="CreditHour" class="form-control" /> -->
+                <select class="form-control" asp-for="CreditHour" required="required">
+                    <option value="">Select Credit Hour</option>
+                    <option value="0">0 Hr</option>
+                    <option value="0.5">0.5 Hr</option>
+                    <option value="0.75">0.75 Hr</option>
+                    <option value="1">1 Hr</option>
+                    <option value="1.5">1.5 Hr</option>
+                    <option value="1.75">1.75 Hr</option>
+                    <option value="2">2 Hr</option>
+                    <option value="2.5">2.5 Hr</option>
+                    <option value="2.75">2.75 Hr</option>
+                    <option value="3">3 hr</option>
+                </select>
+                <span asp-validation-for="CreditHour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Semester" class="control-label"></label>
+                <!-- <input asp-for="Semester" class="form-control" />-->
+                    <select class="form-control" asp-for="Semester" required="required">
+                        <option value="">Select Semester</option>
+                        <option value="1">1st Semester</option>
+                        <option value="2">2nd Semester</option>
+                        <option value="3">3rd Semester</option>
+                        <option value="4">4th Semester</option>
+                        <option value="5">5th Semester</option>
+                        <option value="6">6th Semester</option>
+                        <option value="7">7th Semester</option>
+                        <option value="8">8th Semester</option>
+                        <option value="9">9th Semester</option>
+                    </select>
+
+                <span asp-validation-for="Semester" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
